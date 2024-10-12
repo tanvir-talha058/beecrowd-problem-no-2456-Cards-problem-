@@ -1,0 +1,34 @@
+#include <stdio.h>
+int main()
+{
+    int total[5];
+    int i;
+    int inc1 = 0, dec2 = 0, other3 = 0;
+
+    for(i = 0; i < 5; i++)
+    {
+        scanf("%d", &total[i]);
+    }
+    for(i = 1; i < 4; i++)
+    {
+        if (total[i] < total[i+1] && total[i-1] < total[i])
+            inc1++;
+
+        else if (total[i] > total[i+1] && total[i-1] > total[i])
+            dec2++;
+        else 
+        {
+           other3= 3;
+            break;
+        }
+    }
+    if (inc1 == 3)
+        printf("C\n");
+
+    else if (dec2 == 3)
+        printf("D\n");
+
+    else if (other3 == 3)
+        printf("N\n");
+    return 0;      
+}
